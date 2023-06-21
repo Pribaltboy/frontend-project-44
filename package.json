@@ -19,5 +19,9 @@
   "homepage": "https://github.com/Pribaltboy/frontend-project-44#readme",
   "bin": {
     "code": "bin/brain-games.js"
+  },
+  "dependencies": {
+    "ake": "^0.0.9",
+    "make": "^0.8.1"
   }
 }
