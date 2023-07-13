@@ -18,10 +18,11 @@
   },
   "homepage": "https://github.com/Pribaltboy/frontend-project-44#readme",
   "bin": {
-    "code": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "dependencies": {
     "ake": "^0.0.9",
-    "make": "^0.8.1"
+    "make": "^0.0.0",
+    "readline-sync": "^1.4.10"
   }
 }
