@@ -22,7 +22,13 @@
   },
   "dependencies": {
     "ake": "^0.0.9",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "make": "^0.0.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2"
   }
 }
