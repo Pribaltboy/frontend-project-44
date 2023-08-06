@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const userName = (question) => readlineSync.question(question);
+const getAnswer = (question) => readlineSync.question(question);
 
 const getName = () => {
-  const name = userName('May I have your name? ');
+  const name = getAnswer('May I have your name? ');
   return name;
 };
 const greet = () => {
@@ -14,4 +14,4 @@ const greet = () => {
   return name;
 };
 
-export { greet, userName, getName };
+export { greet, getAnswer, getName };
