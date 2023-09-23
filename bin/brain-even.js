@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 import * as readline from 'node:readline';
+import { generateRandomNumber } from '../src/cli.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-function generateRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function isEven(number) {
   return number % 2 === 0;

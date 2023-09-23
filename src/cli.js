@@ -1,17 +1,15 @@
-import readlineSync from 'readline-sync';
+export function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-const getAnswer = (question) => readlineSync.question(question);
+export function add(num1, num2) {
+  return num1 + num2;
+}
 
-const getName = () => {
-  const name = getAnswer('May I have your name? ');
-  return name;
-};
-const greet = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = getName();
-  const result = `Hello, ${name}!`;
-  console.log(result);
-  return name;
-};
+export function substract(num1, num2) {
+  return num1 - num2;
+}
 
-export { greet, getAnswer, getName };
+export function increase(num1, num2) {
+  return num1 * num2;
+}
