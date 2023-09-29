@@ -1,8 +1,6 @@
-#!/usr/bin/env node
+#!/usr/bin/env node;
 import * as readline from 'node:readline';
-import {
-  add, substract, increase, generateRandomNumber,
-} from '../src/cli.js';
+import { generateRandomNumber } from '../src/cli.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -12,27 +10,24 @@ const rl = readline.createInterface({
 function playGame() {
   console.log('Welcome to the Brain Games!');
   rl.question('May I have your name? ', (userName) => {
-    console.log(`Hello, ${userName}!\nWhat is the result of the expression?`);
-
+    console.log(`Hello, ${userName}!\nFind the greatest common divisor of given numbers.`);
     let correctAnswers = 0;
     const requiredCorrectAnswers = 3;
 
+    function gcd(a, b) {
+      if (b === 0) {
+        return a;
+      }
+      return gcd(b, a % b);
+    }
+
     function askQuestion() {
-      const num1 = generateRandomNumber(1, 10);
-      const num2 = generateRandomNumber(1, 10);
-      const operators = ['+', '-', '*'];
-      const operator = operators[generateRandomNumber(0, operators.length - 1)];
-      const expression = `${num1} ${operator} ${num2}`;
-      const operations = {
-        '+': add,
-        '-': substract,
-        '*': increase,
-      };
-
-      const correctAnswer = operations[operator](num1, num2).toString();
-
-      console.log(`Question: ${expression}`);
-      rl.question('Your answer:', (userAnswer) => {
+      const num1 = generateRandomNumber(0, 100);
+      const num2 = generateRandomNumber(0, 100);
+      const exprQuestion = `${num1} ${num2}`;
+      const correctAnswer = gcd(num1, num2).toString();
+      console.log(`Question: ${exprQuestion}`);
+      rl.question('Your answer: ', (userAnswer) => {
         if (userAnswer === correctAnswer) {
           console.log('Correct!');
           correctAnswers += 1;
@@ -45,7 +40,7 @@ function playGame() {
         } else {
           console.log(`${userAnswer} This answer is wrong :( This is right ${correctAnswer}`);
           console.log('Lets try again!');
-          askQuestion();
+          rl.close();
         }
       });
     }
